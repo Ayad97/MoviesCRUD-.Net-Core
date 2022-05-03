@@ -1,0 +1,25 @@
+﻿@model Movies
+@{
+    ViewData["Tittle"] = Model.Title;
+}
+
+<div class="row mt-5">
+    <div class="co-md-4">
+
+        <img src="data:image/*;base64,@(Convert.ToBase64String(Model.Poster))"
+             class="img-thumbnail"  alt="@Model.Title" />
+    </div>
+    <div class="offset-md-1 col-md-7">
+        <div class="d-flex justify-content-between">
+        <h3><i class="fa-solid fa-film"></i> @Model.Title</h3> 
+        <span><i class="fa-solid fa-star text-warning"></i> @Model.Rate</span>
+        
+     </div>
+     <hr />
+       
+        <span><i class="fa-regular fa-calendar-days"></i> @Model.Year</span>
+        <span class="ml-2"><i class="fa-solid fa-film"></i> @Model.Genre.Name</span>
+        <p class="mt-2 text-justify">@Model.StoreLine</p>
+
+    </div>
+</div>
